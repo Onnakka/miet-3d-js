@@ -5,13 +5,13 @@ body {
     font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background-color: #ffffff;
     color: #333;
-    line-height: 1.5;
-    padding: 40px 20px;
+    line-height: 1.5; /* Межстрочный интервал: в 1.5 раза больше шрифта */
+    padding: 40px 20px; /* Отступы: 40px сверху/снизу, 20px слева/справа */
 }
 
 /* --- Основной контейнер --- */
 .container {
-    max-width: 1100px;
+    max-width: 1100px; /* Ограничивает ширину, чтобы на больших экранах текст не растягивался */
     margin: 0 auto;
     display: flex;
     flex-direction: column; /* Располагает блоки последовательно */
@@ -35,12 +35,12 @@ h2 {
     font-size: 2.5rem;
     font-weight: 800;
     color: #1a1a1a;
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Отступ снизу, чтобы разделить текст */
     text-align: center;
 }
 
 h3 {
-    font-size: 1.25rem;
+    font-size: 1.25rem; /* 1.25 × 16px = 20px */
     font-weight: 700;
     color: #1a1a1a;
     margin-bottom: 10px;
@@ -61,10 +61,10 @@ p {
 .btn {
     padding: 12px 24px;
     border-radius: 8px;
-    text-decoration: none;
+    text-decoration: none; /* Убирает подчёркивание у ссылок-кнопок */
     font-weight: 600;
     font-size: 0.95rem;
-    transition: all 0.2s ease;
+    transition: all 0.2s ease; /* Плавная анимация */
 }
 
 .btn-primary {
@@ -90,7 +90,7 @@ p {
 .block-1 {
     background-color: #f5f7fa;
     display: flex; /* Flexbox для расположения двух колонок */
-    justify-content: space-between;
+    justify-content: space-between; /* Разносит колонки по краям */
     align-items: center;
     gap: 40px;
 }
@@ -103,7 +103,7 @@ p {
     flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-start; /* Левый край */
 }
 
 /* БЛОК 2: */
