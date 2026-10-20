@@ -1,0 +1,250 @@
+@import "https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+/* ================= ПЕРЕМЕННЫЕ ================= */
+:root {
+    --brand-color: #00AB55;
+    --brand-color-hover: #007B3E;
+    --text-main: #1a1a1a;
+    --text-muted: #6b7280;
+    --line-color: #f0f0f0;
+}
+
+body {
+    font-family: 'Public Sans', sans-serif;
+    background-color: #ffffff;
+    color: var(--text-main);
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ================= СЕТКА КОНТЕЙНЕРА ================= */
+.wrapper {
+    width: 100%;
+    max-width: 1152px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* ================= ЛОГОТИП ================= */
+.brand-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.brand-logo {
+    width: 40px;
+    height: 40px;
+    /* Добавил flex-shrink, чтобы логотип не сжимался, если места мало */
+    flex-shrink: 0; 
+}
+
+/* ================= ШАПКА ================= */
+.site-header {
+    border-bottom: 1px solid var(--line-color);
+    background-color: #ffffff;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__nav {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.menu {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    list-style: none;
+}
+
+.menu__link {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    position: relative;
+}
+
+.menu__link::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background-color: var(--brand-color);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.menu__link:hover {
+    color: var(--brand-color);
+}
+
+.menu__link:hover::before {
+    opacity: 1;
+}
+
+.dropdown::after {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(45deg);
+    margin-left: 6px;
+    margin-top: -4px;
+    transition: transform 0.2s ease;
+}
+
+.dropdown:hover::after {
+    transform: rotate(225deg);
+    margin-top: 2px;
+}
+
+/* ================= КНОПКА ================= */
+.button {
+    display: inline-block;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    border: none;
+}
+
+.button--green {
+    background-color: var(--brand-color);
+    color: #ffffff;
+}
+
+.button--green:hover {
+    background-color: var(--brand-color-hover);
+}
+
+/* ================= ПЛАШКА ================= */
+.page-title-bar {
+    background-color: #111111;
+    padding: 15px 0;
+}
+
+/* ================= ФУТЕР ================= */
+.site-footer {
+    padding: 80px 0 40px 0;
+    background-color: #ffffff;
+    /* Прижимаем футер к низу, так как body имеет flex-direction: column */
+    margin-top: auto; 
+}
+
+/* Сетка футера: 1fr для левой части, 2fr для правой */
+.footer__top {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+    margin-bottom: 60px;
+}
+
+/* Левая колонка */
+.footer__info {
+    max-width: 260px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.footer__text {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* Соцсети */
+.social-list {
+    display: flex;
+    gap: 16px;
+    color: #9ca3af; /* Вот этот цвет делает иконки серыми, а не фиолетовыми */
+}
+
+.social-list__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: inherit; /* Наследует серый цвет от родителя */
+    transition: color 0.2s ease;
+}
+
+.social-list__link:hover {
+    color: var(--brand-color);
+}
+
+/* Правая часть (3 колонки) */
+.footer__nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.nav-col__title {
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-main);
+    margin-bottom: 24px;
+    letter-spacing: 0.5px;
+}
+
+.nav-col__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    list-style: none;
+}
+
+.nav-col__link {
+    font-size: 14px;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.nav-col__link:hover {
+    color: var(--brand-color);
+}
+
+.nav-col__link--text {
+    cursor: default;
+}
+
+.nav-col__link--text:hover {
+    color: var(--text-muted);
+}
+
+/* Копирайт */
+.footer__copy {
+    font-size: 14px;
+    color: var(--text-muted);
+    border-top: 1px solid var(--line-color);
+    padding-top: 24px;
+}
